@@ -1,4 +1,3 @@
-import { sleep } from "@/helpers/sleep";
 import { prismaClient } from "@/lib/prisma/prismaClient";
 import { NextResponse } from "next/server";
 import { getUser } from "../../helpers/get-user";
@@ -7,7 +6,6 @@ export async function GET(
   _: Request,
   { params }: { params: Promise<{ productId: string }> }
 ) {
-  await sleep(5000);
   const { productId } = await params;
   const user = await getUser();
 

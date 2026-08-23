@@ -1,10 +1,8 @@
 import { prismaClient } from "@/lib/prisma/prismaClient";
 import { getUser } from "../helpers/get-user";
 import { NextResponse } from "next/server";
-import { sleep } from "@/helpers/sleep";
 
 export async function GET() {
-  await sleep(2000);
 
   const user = await getUser();
 

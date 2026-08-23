@@ -1,11 +1,9 @@
-import { sleep } from "@/helpers/sleep";
 import { prismaClient } from "@/lib/prisma/prismaClient";
 import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
 import { SESSION_COOKIE_NAME } from "../../constants/session";
 
 export async function GET() {
-  await sleep(500);
 
   const cookieStore = await cookies();
   const sessionId = cookieStore.get(SESSION_COOKIE_NAME);

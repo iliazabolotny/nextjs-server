@@ -1,10 +1,8 @@
-import { sleep } from "@/helpers/sleep";
 import { prismaClient } from "@/lib/prisma/prismaClient";
 import { NextResponse } from "next/server";
 import { SESSION_COOKIE_NAME } from "../../constants/session";
 
 export async function POST(req: Request) {
-  await sleep(2000);
 
   const { login, password } = await req.json();
 

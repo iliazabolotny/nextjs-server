@@ -1,4 +1,3 @@
-import { sleep } from "@/helpers/sleep";
 import { prismaClient } from "@/lib/prisma/prismaClient";
 import { NextResponse } from "next/server";
 import { getUser } from "@/app/api/helpers/get-user";
@@ -11,7 +10,6 @@ export async function POST(
     params: Promise<{ productId: string }>;
   }
 ) {
-  await sleep(2000);
 
   const user = await getUser();
 
@@ -54,7 +52,6 @@ export async function DELETE(
     params: Promise<{ productId: string }>;
   }
 ) {
-  await sleep(2000);
 
   const user = await getUser();
 
